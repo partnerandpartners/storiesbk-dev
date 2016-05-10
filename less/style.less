@@ -227,6 +227,11 @@ a {
     text-align: center;
 }
 
+
+.text-right {
+	text-align: right;
+}
+
 .caption {
     font-family: @font-family-sans-serif;
     font-size: 12px;
@@ -477,7 +482,7 @@ h4.sans-serif {
 }
 
 
-// Mailchimp Styles
+// Footer Mailchimp Styles
 
 #mc_embed_signup form {
     display: block;
@@ -521,6 +526,89 @@ h4.sans-serif {
     border-radius: 0px !important;
     letter-spacing: 0 !important;
     color: @brand-primary !important;
+    cursor: pointer;
+    display: inline-block;
+    font-size: @font-size-h6 !important;
+    font-family: @font-family-sans-serif-bold !important;
+    height: 48px !important;
+    line-height: 40px !important;
+    margin: 0 5px 10px 0;
+    padding: 0;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: top;
+    white-space: nowrap;
+    width: auto;
+    transition: all 0.23s ease-in-out 0s;
+}
+
+
+// Bookclub Mailchimp Styles
+
+
+.bookclub-list ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: @light-orange;
+}
+
+.bookclub-list ::-moz-placeholder { /* Firefox 19+ */
+  color: @light-orange;
+}
+
+.bookclub-list :-ms-input-placeholder { /* IE 10+ */
+  color: @light-orange;
+}
+
+.bookclub-list :-moz-placeholder { /* Firefox 18- */
+  color: @light-orange;
+}
+
+.bookclub-list #mc_embed_signup {
+    background: transparent;
+    clear: left;
+}
+
+.bookclub-list #mc_embed_signup form {
+    display: block;
+    position: relative;
+    text-align: left;
+    padding: 0 0 0 0 !important;
+}
+
+.bookclub-list #mc_embed_signup input {
+    border: 2px solid @orange !important;
+    -webkit-appearance: none;
+    &:focus{
+	    border: 2px solid @orange !important;
+    }
+}
+
+.bookclub-list #mc_embed_signup input.email {
+    font-family: @font-family-sans-serif !important;
+    font-size: @font-size-h6 !important;
+    display: block;
+    padding: 0.4em 0.8em !important;
+    margin: 0 4% 10px 0;
+    min-height: 32px;
+    width: 100% !important;
+    min-width: 130px;
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    border-radius: 0px !important;
+}
+
+.bookclub-list #mc_embed_signup input.button {
+    display: block;
+    width: 130px !important;
+    margin: 0 0 10px 0;
+}
+
+.bookclub-list #mc_embed_signup .button {
+    clear: both;
+    background-color: transparent !important;
+    border: 0 none;
+    border-radius: 0px !important;
+    letter-spacing: 0 !important;
+    color: @orange !important;
     cursor: pointer;
     display: inline-block;
     font-size: @font-size-h6 !important;
@@ -718,6 +806,10 @@ ul.navbar-right li a:last-child {
 	    background-color: @light-blue;
 	    color: @blue;
 	    padding: 12%;
+	}
+	
+	.text-right {
+		text-align: center;
 	}
 
 }
