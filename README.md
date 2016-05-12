@@ -1,2 +1,2 @@
 # Stories Bookshop + Storytelling Lab
-Static website built with bootstrap 3 for storiesbk.com
+Static website built with **Bootstrap 3** for storiesbk.com
