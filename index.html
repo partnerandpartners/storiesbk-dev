@@ -42,7 +42,7 @@
 			</div>
 		</nav>
 
-	<nav id="home-nav" class="navbar navbar-default container" role="navigation">
+	<nav id="home-nav" class="navbar container" role="navigation">
 	<div class="navbar-header">
 	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
 	<span class="sr-only">Toggle navigation</span>
@@ -231,46 +231,24 @@
 			<script src="js/compiled.js" type="text/javascript"></script>
 			<script type="text/javascript">
 			jQuery( document ).ready(function( $ ) {
-					var windowH;
-					var homenavOffset = $("#home-nav").offset().top;
-					var pagenavOffset = $("#page-nav").offset().top;
-					var navbarOffset = $("#home-nav").offset().top + $("#home-nav").outerHeight();
-					var scrollY;
-					console.log(pagenavOffset);
+			var windowH;
+			var navbarOffset = $("#home-nav").offset().top + $("#home-nav").outerHeight() + 500;
+			var scrollY = 0;
+
 			$(window).scroll(function() {
-			scrollY = $(this).scrollTop();
+				scrollY = $(this).scrollTop();
+				console.log(scrollY);
+				if (scrollY > navbarOffset) {
+		        $('#page-nav').addClass('scrolled');
+		    } else {
+		        $('#page-nav').removeClass('scrolled');
+		    }
+			});
 
-			console.log(scrollY);
 
-			if (scrollY > navbarOffset) {
-				//console.log("scrolled past it");
-				$("#page-nav").addClass("scrolled");
-			} else {
-				$("#page-nav").removeClass("scrolled");
-			}
-			$("#home-nav").offset({top: (homenavOffset-(scrollY))});
-			$("#home-nav").css("opacity", (1-(scrollY/navbarOffset)));
-			if (navbarOffset < 0 ){
-				console.log("Home nav set")
-				$("#home-nav").offset({top: (homenavOffset)});
-			} else {
-				$("#home-nav").offset({top: (homenavOffset-(scrollY))});
-			}
+			});
 
-			$("#page-nav").offset({top: (pagenavOffset-(scrollY))});
-
-			if (pagenavOffset < 0) {
-				//console.log("working")
-				$("#page-nav").offset({top: (pagenavOffset+(scrollY))});
-			} else {
-				$("#page-nav").offset({top: 0});
-			}
-			homenavOffset = $("#home-nav").offset().top;
-			pagenavOffset = $("#page-nav").offset().top;
-
-		});
-		});
-		</script>
+			</script>
 			<!--
 			<script src="js/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
 			<script src="js/jquery.mousewheel.min.js" type="text/javascript"></script>
